@@ -6,17 +6,17 @@ import json
 S3_CONFIG = {
     "origins": [
         {
-            "bucketName": "efrainorigin",
-            "cliProfile": "default"
+            "bucketName": "bucket1",
+            "cliProfile": "user1"
         },
         {
-            "bucketName": "bitcoind-prediction",
-            "cliProfile": "default"
+            "bucketName": "bucket2",
+            "cliProfile": "user2"
         }
     ],
     "destination": {
-        "bucketName": "efraindestination2",
-        "cliProfile": "user1"
+        "bucketName": "bucket3",
+        "cliProfile": "user3"
     }
 }
 
