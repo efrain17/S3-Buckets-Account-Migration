@@ -60,8 +60,8 @@ def main():
         boto3.setup_default_session(profile_name=origin["cliProfile"])
         iam = boto3.resource('iam')
         current_user = iam.CurrentUser()
-        destinationBucketPolicy["Statement"][0]["Principal"]["AWS"] = current_user.arn
-        destinationBucketPolicy["Statement"][1]["Principal"]["AWS"] = current_user.arn
+        destinationBucketPolicy["Statement"][0]["Principal"]["AWS"] = "*"
+        destinationBucketPolicy["Statement"][1]["Principal"]["AWS"] = "*"
         # set access to sync folder into destination
         policy = json.dumps(destinationBucketPolicy)
         boto3.setup_default_session(profile_name=destination_cli_profile)
