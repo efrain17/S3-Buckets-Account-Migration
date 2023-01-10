@@ -9,7 +9,8 @@ import sys
 MAX_DAYS_INACTIVE = 754
 CONFIG = {
     "cliProfiles": [
-        "efrain"
+        "user1",
+        "user2",
     ]
 }
 

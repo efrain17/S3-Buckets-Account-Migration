@@ -27,11 +27,11 @@
     * python3 main.py
 
 
-How to use user cleaner user
+##  How to use user cleaner script
 
 * Generate list of user into a csv
-1) Set MAX_DAYS_INACTIVE in order to delete all of the user with more days of inactivity
-2) set cliProfiles in order to get users from multiples aws accounts
+1) Set [MAX_DAYS_INACTIVE](https://github.com/efrain17/S3-Buckets-Account-Migration/blob/master/user_cleaner.py#L9) in order to delete all of the user with more days of inactivity
+2) set [cliProfiles](https://github.com/efrain17/S3-Buckets-Account-Migration/blob/master/user_cleaner.py#L11-L13) in order to get users from multiples aws accounts
 3) run the command 
     * python3 user_cleaner.py list
 
