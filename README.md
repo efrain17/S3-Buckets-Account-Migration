@@ -36,6 +36,7 @@
     * python3 user_cleaner.py list
 
 
-#### Delete list of user into a csv, remenber the script will delete the user using the data from the csv so take care of new updates.
+#### Delete list of user into a csv, 
+remenber the script will delete the user using the data from the csv so take care of new updates.
 1) run the command 
     * python3 user_cleaner.py delete
