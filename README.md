@@ -25,3 +25,17 @@
 5. Make sure the destination bucket does not have Block all public access, if you have it activated you will not be able to update the policy, don't worry, this does not enable public write access, the policy is what enables it and it is limitated by the aws account.
 5. open a console and run the main.py script 
     * python3 main.py
+
+
+How to use user cleaner user
+
+* Generate list of user into a csv
+1) Set MAX_DAYS_INACTIVE in order to delete all of the user with more days of inactivity
+2) set cliProfiles in order to get users from multiples aws accounts
+3) run the command 
+    * python3 user_cleaner.py list
+
+
+* Delete list of user into a csv, remenber the script will delete the user using the data from the csv so take care of new updates.
+1) run the command 
+    * python3 user_cleaner.py delete
