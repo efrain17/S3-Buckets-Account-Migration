@@ -164,11 +164,11 @@ def generate_list_of_users():
     write_csv(users)
 
 
-# def dele_user_from_csv():
-#     with open('users.csv', 'r') as csvfile:
-#         reader = csv.DictReader(csvfile)
-#         for row in reader:
-#             delete_user_and_keys(row)
+def dele_user_from_csv():
+    with open('users.csv', 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            delete_user_and_keys(row)
 
 
 if __name__ == "__main__":
@@ -177,7 +177,7 @@ if __name__ == "__main__":
         generate_list_of_users()
         print("List of users generated: users.csv")
     elif sys.argv[1] == "delete":
-        # dele_user_from_csv()
+        dele_user_from_csv()
         print("Users deleted")
     else:
         print("Invalid command")
