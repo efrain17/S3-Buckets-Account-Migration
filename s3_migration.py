@@ -6,17 +6,17 @@ import json
 S3_CONFIG = {
     "origins": [
         {
-            "bucketName": "bucket1",
-            "cliProfile": "user1"
-        },
-        {
-            "bucketName": "bucket2",
-            "cliProfile": "user2"
+            "bucketName": "efrainorigin",
+            "cliProfile": "efrain",
+            "includes": [
+                "AWSlogs/*/Cloudtrail/*/2021/*",
+                "AWSlogs/*/Cloudtrail/*/2023/*"
+            ]
         }
     ],
     "destination": {
-        "bucketName": "bucket3",
-        "cliProfile": "user3"
+        "bucketName": "efraindestination",
+        "cliProfile": "efrain"
     }
 }
 
@@ -68,8 +68,12 @@ def main():
         s3 = boto3.client('s3')
         s3.put_bucket_policy(Bucket=destination_bucket, Policy=policy)
         # sync files
+        iclude_command = ""
+        for include in origin["includes"]:
+            iclude_command += f' --include "{include}"'
         sync_command = f"aws s3 sync s3://{origin_bucket} s3://{destination_bucket}/{origin_bucket} " \
-            f"--profile {origin['cliProfile']}"
+            f"--profile {origin['cliProfile']} " \
+            f'--exclude "*" {iclude_command}'
         os.system(sync_command)
 
 
