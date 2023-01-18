@@ -9,11 +9,18 @@
         "origins": [
             {
                 "bucketName": "bucket1",
-                "cliProfile": "user1"
+                "cliProfile": "user1",
+                "includes": [
+                    "AWSlogs/*/Cloudtrail/*/2021/*",
+                    "AWSlogs/*/Cloudtrail/*/2022/*"
+                ]
             },
             {
                 "bucketName": "bucket2",
-                "cliProfile": "user2"
+                "cliProfile": "user2",
+                "includes": [
+                    "AWSlogs/*/Cloudtrail/*/2021/*",
+                ]
             }
         ],
         "destination": {

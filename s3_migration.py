@@ -3,20 +3,28 @@ import boto3
 import json
 
 
+# you can add one or more include patterns, if you want to add everything use "*"
 S3_CONFIG = {
     "origins": [
         {
-            "bucketName": "efrainorigin",
-            "cliProfile": "efrain",
+            "bucketName": "bucket1",
+            "cliProfile": "user1",
             "includes": [
                 "AWSlogs/*/Cloudtrail/*/2021/*",
-                "AWSlogs/*/Cloudtrail/*/2023/*"
+                "AWSlogs/*/Cloudtrail/*/2022/*"
+            ]
+        },
+        {
+            "bucketName": "bucket2",
+            "cliProfile": "user2",
+            "includes": [
+                "AWSlogs/*/Cloudtrail/*/2021/*",
             ]
         }
     ],
     "destination": {
-        "bucketName": "efraindestination",
-        "cliProfile": "efrain"
+        "bucketName": "bucket3",
+        "cliProfile": "user3"
     }
 }
 
