@@ -9,7 +9,7 @@ S3_CONFIG = {
         {
             "bucketName": "bucket1",
             "cliProfile": "user1",
-            "includes": [
+            "include": [
                 "AWSlogs/*/Cloudtrail/*/2021/*",
                 "AWSlogs/*/Cloudtrail/*/2022/*"
             ]
@@ -17,7 +17,7 @@ S3_CONFIG = {
         {
             "bucketName": "bucket2",
             "cliProfile": "user2",
-            "includes": [
+            "include": [
                 "AWSlogs/*/Cloudtrail/*/2021/*",
             ]
         }
@@ -77,7 +77,7 @@ def main():
         s3.put_bucket_policy(Bucket=destination_bucket, Policy=policy)
         # sync files
         iclude_command = ""
-        for include in origin["includes"]:
+        for include in origin["include"]:
             iclude_command += f' --include "{include}"'
         sync_command = f"aws s3 sync s3://{origin_bucket} s3://{destination_bucket}/{origin_bucket} " \
             f"--profile {origin['cliProfile']} " \

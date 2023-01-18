@@ -10,7 +10,7 @@
             {
                 "bucketName": "bucket1",
                 "cliProfile": "user1",
-                "includes": [
+                "include": [
                     "AWSlogs/*/Cloudtrail/*/2021/*",
                     "AWSlogs/*/Cloudtrail/*/2022/*"
                 ]
@@ -18,7 +18,7 @@
             {
                 "bucketName": "bucket2",
                 "cliProfile": "user2",
-                "includes": [
+                "include": [
                     "AWSlogs/*/Cloudtrail/*/2021/*",
                 ]
             }
